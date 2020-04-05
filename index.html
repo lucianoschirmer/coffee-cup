@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Café ♥ </title>
+    <meta charset="utf-8" />
+
+    <style>
+        body {
+            background-image: url(img/fundo.jpeg);
+            background-attachment: fixed;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            width: 100%;
+            height: 50px;
+            background-color: #222;
+            font-family: 'Arial';
+        }
+
+        .menu ul {
+            list-style: none;
+            position: relative;
+        }
+
+        .menu ul li {
+            width: 150px;
+            float: left;
+        }
+
+        .menu a {
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background-color: #222;
+            color: #fff;
+        }
+
+        .menu ul ul {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .menu ul li:hover ul {
+            visibility: visible;
+        }
+
+        .menu a:hover {
+            background-color: #f4f4f4;
+            color: #555;
+        }
+
+        .menu ul ul li {
+            float: none;
+            border-bottom: solid 1px #ccc;
+        }
+
+        .menu ul ul li a {
+            background-color: #069;
+        }
+
+        label[for="btn_menu"] {
+            padding: 5px;
+            background-color: #222;
+            color: #fff;
+            font-family: "Arial";
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        #btn_menu {
+            display: none;
+        }
+
+        label[for="btn_menu"] {
+            display: none;
+        }
+
+        @media(max-width: 800px) {
+            label[for="btn_menu"] {
+                display: block;
+            }
+
+            #btn_menu:checked~.menu {
+                margin-left: 0;
+            }
+
+            .menu {
+                margin-top: 5px;
+                margin-left: -100%;
+                transition: all .4s;
+            }
+
+            .menu ul li {
+                width: 100%;
+                float: none;
+            }
+
+            .menu ul ul {
+                position: static;
+                overflow: hidden;
+                max-height: 0;
+                transition: all .4s;
+            }
+
+            .menu ul li:hover ul {
+                height: auto;
+                max-height: 200px;
+            }
+        }
+
+        .rodape_final {
+            background-color: #50311a;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            font-family: 'Arial';
+            font-size: 15px;
+
+            /* position: fixed;
+            bottom: 0;
+            left: 0; */
+        }
+
+        .art_rod {
+            border: 1px solid #50311a;
+            width: 33.33%;
+            margin: 10px;
+        }
+
+        .img_rod {
+            width: inherit;
+        }
+
+        /*inicio subir ao topo*/
+        #subirTopo {
+            text-decoration: none;
+            background: rgba(30, 156, 161, .9);
+            bottom: 30px;
+            right: 30px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: fixed;
+            border: 0;
+            font-family: sans-serif;
+            opacity: .8;
+        }
+
+        #subirTopo:hover {
+            opacity: 1;
+        }
+
+        /*fim subir ao topo*/
+
+        /* Style all font awesome icons */
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        /* Set a specific color for each brand */
+
+        /* Medium */
+        .fa-medium {
+            background: #212529;
+            color: white;
+        }
+
+        /* Github*/
+        .fa-github {
+            background: #22b8cf;
+            color: white;
+        }
+
+        /* Linkedin*/
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .site {
+            color: #fff;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery("#subirTopo").hide();
+
+            jQuery('a#subirTopo').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 1000) {
+                    jQuery('#subirTopo').fadeIn();
+                } else {
+                    jQuery('#subirTopo').fadeOut();
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <input type="checkbox" id="btn_menu">
+    <label for="btn_menu">&#9776;</label>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Serviços</a>
+                <ul>
+                    <li><a href="#">Tome Seu Café</a></li>
+                    <li><a href="#">Faça Seu Pedido</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sobre</a>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Nossa História</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contatos</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="header">
+        <h1>Alguém falou café?</h1>
+    </div>
+
+    <article>
+        <a id="subirTopo">
+            ☝ <br> subir
+        </a>
+
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+        <p>corpo da pagina</p>
+
+
+
+
+        <footer>
+            <a href="https://www.linkedin.com/in/lucianoschirmer/">Site</a>
+        </footer>
+    </article>
+
+    <footer class="rodape_final">
+        <article class="art_rod">
+            <img src="img/logo.png" class="img_rod">
+        </article>
+        <article class="art_rod">
+            <p>A gasolina de um bom trabalho é o café.</p>
+            <p>________________</p>
+            </br>
+            <!-- Add icon library -->
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <!-- Add font awesome icons -->
+            <a href="https://medium.com/@lucianoschirmerbrasil" target="_blank" class="fa fa-medium"></a>
+            <a href="https://github.com/lucianoschirmer" target="_blank" class="fa fa-github"></a>
+            <a href="https://www.linkedin.com/in/lucianoschirmer/" target="_blank" class="fa fa-linkedin"></a>
+
+
+        </article>
+        <article class="art_rod">
+            <a href="https://www.linkedin.com/in/lucianoschirmer/" target="_blank" class="site">www.cafe.com.br</a>
+            <p>☏ 47 3027-9999</p>
+            <p>✆ 47 9 9999-9999</p>
+
+        </article>
+    </footer>
+
+</body>
+
+</html>
