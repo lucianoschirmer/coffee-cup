@@ -7,7 +7,7 @@
 
     <style>
         body {
-            background-image: url(fundo2.jpeg);
+            background-image: url(img/fundo2.jpeg);
             background-attachment: fixed;
             background-size: 100%;
             background-repeat: no-repeat;
@@ -89,6 +89,7 @@
         label[for="btn_menu"] {
             display: none;
         }
+
 
         @media(max-width: 800px) {
             label[for="btn_menu"] {
@@ -235,6 +236,42 @@
             }
 
         }
+
+        @media (min-width: 700px) {
+            .leading {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .leading {
+            height: 240px;
+            margin-bottom: 30px;
+            padding: 30px;
+            color: white;
+            background: url('https://cdn.glitch.com/a5121e34-96b3-4a70-8227-040c51e64fae%2Fcat.jpg?1509635989509') center #333 no-repeat;
+            background-size: cover;
+            color: white;
+            text-shadow: 0px 0px 5px #000;
+        }
+
+        .leading-bigtext {
+            margin-right: 60px;
+            font-weight: bold;
+            font-size: 24vw;
+        }
+
+        @media (min-width: 700px) {
+            .leading-bigtext {
+                font-size: 140px;
+            }
+        }
+
+        .leading-text {
+            max-width: 900px;
+            font-size: 1.2em;
+            line-height: 1.4em;
+        }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -301,6 +338,14 @@
             ☝ <br> subir
         </a>
 
+        </br>
+        <section class="leading">
+            <p class="leading-bigtext">Olá!</p>
+            <p class="leading-text">Seja muito bem vindo(a) ao meu portifólio github pages. Fique a vontade...</p>
+        </section>
+
+
+
         <p>corpo da pagina</p>
         <p>corpo da pagina</p>
         <p>corpo da pagina</p>
@@ -395,6 +440,23 @@
         <p>corpo da pagina</p>
         <p>corpo da pagina</p>
         <p>corpo da pagina</p>
+
+
+        <div>
+            <h3>Projetos recentes</h3>
+            </br>
+            <small>Algumas das empresas que confiam no nosso trabalho</small>
+        </div>
+
+
+
+
+
+        <div>
+            <h3>Clientes e Parceiros</h3>
+            </br>
+            <small>Algumas das empresas que confiam no nosso trabalho</small>
+        </div>
 
 
 
@@ -410,7 +472,7 @@
 
     <footer class="rodape_final">
         <article class="art_rod">
-            <img src="logo.png" class="img_rod">
+            <img src="img/logo.png" class="img_rod">
         </article>
         <article class="art_rod">
             <p>A gasolina de um bom trabalho é o café.</p>
